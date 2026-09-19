@@ -504,8 +504,8 @@ def infrastruktura() -> str:
     <path d="M {lewy_x + pan_w / 2 - 3:.0f} 86 L {lewy_x + pan_w / 2:.0f} 91 L {lewy_x + pan_w / 2 + 3:.0f} 86" fill="none" stroke="{LINIA2}" stroke-width="1"/>
   </g>
 
-{panel(lewy_x, "APLIKACJE", "2 vCore  ·  4 GB RAM  ·  140 GB", "Debian 12", VPS1, "lewy")}
-{panel(prawy_x, "BAZA DANYCH", "6 vCore  ·  12 GB RAM  ·  100 GB NVMe", "Debian 13", VPS3, "prawy")}
+{panel(lewy_x, "APLIKACJE", "2 vCore  ·  4 GB RAM  ·  140 GB", "Linux (Debian)", VPS1, "lewy")}
+{panel(prawy_x, "BAZA DANYCH", "6 vCore  ·  12 GB RAM  ·  100 GB NVMe", "Linux (Debian)", VPS3, "prawy")}
 
   <line x1="{lewy_x + 20}" y1="{tunel_y}" x2="{szer - lewy_x - 20}" y2="{tunel_y}" stroke="{LINIA2}" stroke-width="1" stroke-dasharray="4 4"/>
 {kropki}
