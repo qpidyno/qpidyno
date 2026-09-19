@@ -1,0 +1,6 @@
+# Lokalny podgląd profilu - nie trafia do repozytorium
+demo.html
+podglad-svg.html
+
+__pycache__/
+*.pyc
