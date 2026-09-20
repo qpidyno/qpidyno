@@ -14,29 +14,37 @@
 
 <br>
 
-<img src="assets/naglowek-kim.svg" alt="Kim jesteśmy" width="900">
+<img src="assets/naglowek-kim.svg" alt="Kim jestem" width="900">
 
-Nazywam się **Mateusz Rowieński**, a software house prowadzę razem z bratem,
-**Bartłomiejem Rowieńskim**. Nie pokazujemy makiet ani szablonów - tylko rzeczy,
-które można otworzyć i sprawdzić: system dla klinik działający online, grę w produkcji
-i programy na Windowsa gotowe do pobrania.
+Nazywam się **Mateusz Rowieński** i prowadzę jednoosobowy warsztat, który właśnie
+zamienia się w firmę. Nie pokazuję makiet ani szablonów - tylko rzeczy, które można
+otworzyć i sprawdzić: system dla klinik działający online, grę w produkcji i programy
+na Windowsa gotowe do pobrania.
 
-Kod piszemy **ramię w ramię z Claude Code**: my odpowiadamy za kierunek, decyzje
-produktowe i to, żeby całość się trzymała kupy - AI skraca drogę od pomysłu do działającej
-wersji. Serwery, na których to wszystko stoi, stawiamy i utrzymujemy sami.
+Odpowiadam za wszystko: architekturę, kod, bazy danych, serwery i bezpieczeństwo, ale
+też za to, jak produkt wygląda i jak się go używa. **Claude Code to narzędzie, nie
+współautor** - przyspiesza pisanie kodu i zdejmuje ze mnie powtarzalną robotę, dzięki
+czemu jeden człowiek ogarnia tyle projektów naraz. Struktura, decyzje projektowe
+i odpowiedzialność za to, co trafia na produkcję, zostają po mojej stronie.
+
+**AI nie tylko w chmurze.** MNICH tłumaczy pliki gier i modów lokalnie, na polskim
+modelu **Bielik**, uruchomionym na karcie graficznej użytkownika - żaden tekst nie
+wychodzi poza jego komputer. NBB usuwa tło z grafik tak samo: model liczy u odbiorcy,
+bez konta i bez wysyłania zdjęć na cudzy serwer. Potrafię postawić model lokalnie
+i wpiąć go w program tak, żeby wykonywał konkretną robotę, a nie był ozdobą.
 
 Większość repozytoriów jest prywatna, bo to produkty komercyjne, więc zamiast kodu
-**pokazujemy tu, jak one wyglądają.**
+**pokazuję tu, jak one wyglądają.**
 
 <img src="assets/dzielnik.svg" alt="" width="900">
 
-<img src="assets/naglowek-warsztat.svg" alt="Co zbudowaliśmy" width="900">
+<img src="assets/naglowek-warsztat.svg" alt="Co zbudowałem" width="900">
 
 ### PODIVO - system rezerwacji dla klinik podologicznych
 
 Pacjent znajduje specjalistę i rezerwuje termin w kilka sekund, a klinika dostaje
 panel do zarządzania grafikiem. Działa online, z aplikacjami mobilnymi,
-na naszych własnych serwerach.
+na moich własnych serwerach.
 
 > **Wersja online działa na danych testowych.** Kliniki, specjaliści i wolne terminy,
 > które widać po wejściu, są przykładowe - to demo do klikania, a nie kartoteka
@@ -113,12 +121,12 @@ Strona, z której wzięła się kolorystyka tego profilu. Pięć języków, zero
 
 <img src="assets/naglowek-serwery.svg" alt="Własne serwery" width="900">
 
-Nic z tego nie stoi na hostingu z półki. Mamy trzy maszyny, które sami postawiliśmy
-i sami utrzymujemy: dwie w serwerowni i jedną u siebie.
+Nic z tego nie stoi na hostingu z półki. Mam trzy maszyny, które sam postawiłem
+i sam utrzymuję: dwie w serwerowni i jedną u siebie.
 
 **Serwer aplikacji** obsługuje to, co widzą ludzie - strony, panele klientów, zdjęcia
 i pliki oraz firmową pocztę. **Serwer bazy danych** stoi osobno i trzyma dane wszystkich
-systemów: konta, rezerwacje, kartoteki. Rozdzieliliśmy je celowo, bo ruch z internetu
+systemów: konta, rezerwacje, kartoteki. Rozdzieliłem je celowo, bo ruch z internetu
 nigdy nie powinien dotykać danych bezpośrednio - obie maszyny rozmawiają ze sobą wyłącznie
 prywatnym, szyfrowanym połączeniem, którego z zewnątrz w ogóle nie widać.
 **Serwer domowy** trzyma archiwum projektów i kopie zapasowe, a przy okazji obsługuje
@@ -135,22 +143,22 @@ dysk sieciowy i multimedia.
 | **Poczta** | własny serwer pocztowy z podpisem potwierdzającym nadawcę |
 | **Ochrona** | zapora sieciowa, limity zapytań, pułapki na boty, filtr ruchu |
 | **Nadzór** | monitoring całą dobę, z powiadomieniem, gdy coś odstaje od normy |
-| **Kopie** | codzienne kopie zapasowe plus niezależne archiwum u nas |
+| **Kopie** | codzienne kopie zapasowe plus niezależne archiwum u mnie |
 
 Wszystkie usługi na serwerze aplikacji mieszczą się razem w około **85 MB pamięci** -
-bo narzędzia dobieramy do serwera, a nie odwrotnie. Kiedy trzeba było uruchomić pocztę,
+bo narzędzia dobieram do serwera, a nie odwrotnie. Kiedy trzeba było uruchomić pocztę,
 popularne gotowce odpadły przy kilku gigabajtach, więc poszło rozwiązanie, które
 robi dokładnie to samo za ułamek tego.
 
 <img src="assets/dzielnik.svg" alt="" width="900">
 
-<img src="assets/naglowek-stanowisko.svg" alt="Na czym pracujemy" width="900">
+<img src="assets/naglowek-stanowisko.svg" alt="Na czym pracuję" width="900">
 
 <img src="assets/stanowisko.svg" alt="Jednostka robocza - specyfikacja komputera i stanowiska" width="900">
 
 <img src="assets/dzielnik.svg" alt="" width="900">
 
-<img src="assets/naglowek-czym.svg" alt="Czym pracujemy" width="900">
+<img src="assets/naglowek-czym.svg" alt="Czym pracuję" width="900">
 
 <p>
   <img src="https://img.shields.io/badge/Claude_Code-0C0C11?style=for-the-badge&logo=anthropic&logoColor=E60000&labelColor=08080B" alt="Claude Code">
@@ -196,5 +204,5 @@ Ta liczy naprawdę - razem z commitami, których nie widać z zewnątrz.</sub>
 
 <div align="center">
   <sub><b>Budujemy rzeczy, które potem same pracują.</b></sub><br>
-  <sub>Repozytoria produktów są prywatne - tutaj pokazujemy, jak wyglądają od strony użytkownika.</sub>
+  <sub>Repozytoria produktów są prywatne - tutaj pokazuję, jak wyglądają od strony użytkownika.</sub>
 </div>

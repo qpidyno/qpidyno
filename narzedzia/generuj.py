@@ -197,8 +197,8 @@ PROJEKTY = [
     ("PODIVO", "SYSTEM DLA KLINIK", "DEMO ONLINE", CZERWIEN_TEKST),
     ("BACKHAUL", "SYMULACJA TRANSPORTOWA", "W PRODUKCJI", SREBRO),
     ("SYNDYKAT: KOD ULICY", "TEKSTOWE MMO", "ZAWIESZONY", MGLA),
-    ("MNICH", "TŁUMACZ MODÓW", "DO POBRANIA", SREBRO),
-    ("NO BACKGROUND BOSS", "OBRÓBKA GRAFIKI", "DO POBRANIA", SREBRO),
+    ("MNICH", "TŁUMACZ MODÓW · BIELIK LOKALNIE", "DO POBRANIA", SREBRO),
+    ("NO BACKGROUND BOSS", "USUWANIE TŁA · MODEL LOKALNIE", "DO POBRANIA", SREBRO),
 ]
 
 
@@ -793,14 +793,14 @@ if __name__ == "__main__":
     zapisz("dzielnik.svg", dzielnik())
 
     nagłówki = {
-        "naglowek-kim.svg": ("// KIM JESTEŚMY", "dwóch braci, pięć projektów, zero szablonów"),
-        "naglowek-warsztat.svg": ("// CO ZBUDOWALIŚMY", "rzeczy, które można otworzyć i sprawdzić"),
+        "naglowek-kim.svg": ("// KIM JESTEM", "jeden człowiek, pięć projektów, zero szablonów"),
+        "naglowek-warsztat.svg": ("// CO ZBUDOWAŁEM", "rzeczy, które można otworzyć i sprawdzić"),
         "naglowek-stan.svg": ("// STAN WARSZTATU", "co żyje, co powstaje, co czeka"),
-        "naglowek-serwery.svg": ("// WŁASNE SERWERY", "stawiamy i utrzymujemy je sami, bez hostingu z półki"),
+        "naglowek-serwery.svg": ("// WŁASNE SERWERY", "stawiam i utrzymuję je sam, bez hostingu z półki"),
         "naglowek-stanowisko.svg": ("// NA CZYM PRACUJEMY", "sprzęt, przy którym to wszystko powstaje"),
-        "naglowek-czym.svg": ("// CZYM PRACUJEMY", "stos technologiczny, bez upiększeń"),
+        "naglowek-czym.svg": ("// CZYM PRACUJĘ", "stos technologiczny, bez upiększeń"),
         "naglowek-liczby.svg": ("// LICZBY", "commity prywatne też się liczą"),
-        "naglowek-kontakt.svg": ("// KONTAKT", "odzywamy się tego samego dnia"),
+        "naglowek-kontakt.svg": ("// KONTAKT", "odzywam się tego samego dnia"),
     }
     for nazwa, (t, o) in nagłówki.items():
         zapisz(nazwa, nagłówek(t, o))
