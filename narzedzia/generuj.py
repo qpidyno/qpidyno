@@ -752,14 +752,24 @@ def wczytaj_dane() -> dict:
     user = pobierz_z_api()["data"]["user"]
     wkład = user["contributionsCollection"]
 
-    # Commity w prywatnych repozytoriach widac tylko z tokenem, ktory ma do nich
-    # dostep - bez tego GitHub oddaje ulamek i karta klamie w dol. Rozbicie
-    # wypisujemy zawsze, zeby po uruchomieniu bylo widac, co token naprawde widzi.
+    # Token z dostepem do prywatnych repozytoriow dostaje prawdziwe rozbicie:
+    # commity osobno, a "restricted" schodzi do zera. Token bez tego dostepu
+    # dostaje jeden worek "wklady prywatne", w ktorym siedza takze pull requesty,
+    # zgloszenia i zalozone repozytoria - zsumowanie go z commitami zawyza karte
+    # o kilkaset pozycji. Dlatego niezerowa wartosc traktujemy jak awarie tokena.
+    restricted = wkład["restrictedContributionsCount"]
     print(
-        f"  commity publiczne: {wkład['totalCommitContributions']}, "
-        f"prywatne: {wkład['restrictedContributionsCount']}, "
+        f"  commity: {wkład['totalCommitContributions']}, "
+        f"wklady prywatne bez rozbicia: {restricted}, "
         f"repozytoria: {user['repositories']['totalCount']}"
     )
+    if restricted > 0:
+        raise SystemExit(
+            "Token nie widzi prywatnych repozytoriow - GitHub oddal "
+            f"{restricted} wkladow bez rozbicia na typy. Karta pokazalaby "
+            "zawyzona liczbe commitow, wiec przerywam. Sprawdz, czy sekret "
+            "STATYSTYKI_TOKEN nie wygasl (token klasyczny, zakresy repo i read:user)."
+        )
 
     rozmiary: dict[str, int] = {}
     for repo in user["repositories"]["nodes"]:
@@ -778,7 +788,7 @@ def wczytaj_dane() -> dict:
     założone = dt.datetime.fromisoformat(user["createdAt"].replace("Z", "+00:00"))
 
     return {
-        "commity": wkład["totalCommitContributions"] + wkład["restrictedContributionsCount"],
+        "commity": wkład["totalCommitContributions"],
         "repozytoria": user["repositories"]["totalCount"],
         "jezyki_ile": len(rozmiary),
         "od": f"{założone.month:02d}.{założone.year}",
