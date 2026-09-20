@@ -203,6 +203,6 @@ Ta liczy naprawdę - razem z commitami, których nie widać z zewnątrz.</sub>
 <br>
 
 <div align="center">
-  <sub><b>Budujemy rzeczy, które potem same pracują.</b></sub><br>
+  <sub><b>Buduję rzeczy, które potem same pracują.</b></sub><br>
   <sub>Repozytoria produktów są prywatne - tutaj pokazuję, jak wyglądają od strony użytkownika.</sub>
 </div>

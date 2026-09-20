@@ -104,7 +104,7 @@ def hero() -> str:
     mn = mono(500)
 
     nazwa_d, nazwa_w = rj.ścieżka("ROWIEŃSKI INTERACTIVE", 25, 0.05)
-    hasło1 = "Budujemy rzeczy, które potem"
+    hasło1 = "Buduję rzeczy, które potem"
     hasło2 = "same pracują."
     h1_w = rj.szerokość(hasło1, 38)
     h2_w = rj.szerokość(hasło2, 38)
@@ -532,7 +532,7 @@ def dom_panel(szer: int, x: float, y: float, strzałka_x: float, rj, mn4, mn5) -
     <rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{PANEL}" stroke="{LINIA2}" stroke-width="1"/>
     <rect x="{x}" y="{y}" width="{w}" height="2" fill="{SREBRO}" opacity="0.4"/>
     {tekst(rj, "SERWER DOMOWY", x + 22, y + 38, 20, MLEKO, tracking=0.02)}
-    {tekst(mn4, "u nas, nie w chmurze", x + 22, y + 58, 9, MGLA, tracking=0.1)}
+    {tekst(mn4, "u mnie, nie w chmurze", x + 22, y + 58, 9, MGLA, tracking=0.1)}
     <rect x="{x + 176}" y="{y + 20}" width="1" height="{h - 40}" fill="{LINIA}"/>
 {wiersze}
   </g>"""
@@ -797,7 +797,7 @@ if __name__ == "__main__":
         "naglowek-warsztat.svg": ("// CO ZBUDOWAŁEM", "rzeczy, które można otworzyć i sprawdzić"),
         "naglowek-stan.svg": ("// STAN WARSZTATU", "co żyje, co powstaje, co czeka"),
         "naglowek-serwery.svg": ("// WŁASNE SERWERY", "stawiam i utrzymuję je sam, bez hostingu z półki"),
-        "naglowek-stanowisko.svg": ("// NA CZYM PRACUJEMY", "sprzęt, przy którym to wszystko powstaje"),
+        "naglowek-stanowisko.svg": ("// NA CZYM PRACUJĘ", "sprzęt, przy którym to wszystko powstaje"),
         "naglowek-czym.svg": ("// CZYM PRACUJĘ", "stos technologiczny, bez upiększeń"),
         "naglowek-liczby.svg": ("// LICZBY", "commity prywatne też się liczą"),
         "naglowek-kontakt.svg": ("// KONTAKT", "odzywam się tego samego dnia"),
