@@ -11,6 +11,7 @@ srodowiskowej GH_TOKEN albo GITHUB_TOKEN; bez tokena probuje lokalnego `gh`.
 from __future__ import annotations
 
 import pathlib
+import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
@@ -783,9 +784,34 @@ def zapisz(nazwa: str, treść: str) -> None:
     print(f"{plik}  {len(treść.encode('utf-8')) / 1024:.1f} KB")
 
 
+def opis_karty(dane: dict) -> None:
+    """Przepisuje opis alternatywny karty w README na aktualne liczby.
+
+    Opis czyta czytnik ekranu i wyszukiwarka, wiec nie moze zostac z liczbami
+    wpisanymi recznie pol roku temu, kiedy sama karta juz sie odswiezyla.
+    """
+    plik = pathlib.Path(__file__).parent.parent / "README.md"
+    treść = plik.read_text(encoding="utf-8")
+
+    opis = (
+        f"Statystyki: {dane['commity']} commitów w 12 miesięcy, "
+        f"{dane['repozytoria']} repozytoriów, rozkład języków"
+    )
+
+    wzór = re.compile(r'(<img src="assets/statystyki\.svg" alt=")[^"]*(")')
+    nowa, ile = wzór.subn(lambda m: m.group(1) + opis + m.group(2), treść, count=1)
+    if ile != 1:
+        raise SystemExit("Nie znalazlem karty statystyk w README.md")
+    if nowa != treść:
+        plik.write_text(nowa, encoding="utf-8")
+        print(f"README.md  opis karty: {opis}")
+
+
 if __name__ == "__main__":
     if "--statystyki" in sys.argv:
-        zapisz("statystyki.svg", statystyki(wczytaj_dane()))
+        dane = wczytaj_dane()
+        zapisz("statystyki.svg", statystyki(dane))
+        opis_karty(dane)
         raise SystemExit(0)
 
     zapisz("hero.svg", hero())
