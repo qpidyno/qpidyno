@@ -752,6 +752,15 @@ def wczytaj_dane() -> dict:
     user = pobierz_z_api()["data"]["user"]
     wkład = user["contributionsCollection"]
 
+    # Commity w prywatnych repozytoriach widac tylko z tokenem, ktory ma do nich
+    # dostep - bez tego GitHub oddaje ulamek i karta klamie w dol. Rozbicie
+    # wypisujemy zawsze, zeby po uruchomieniu bylo widac, co token naprawde widzi.
+    print(
+        f"  commity publiczne: {wkład['totalCommitContributions']}, "
+        f"prywatne: {wkład['restrictedContributionsCount']}, "
+        f"repozytoria: {user['repositories']['totalCount']}"
+    )
+
     rozmiary: dict[str, int] = {}
     for repo in user["repositories"]["nodes"]:
         for krawędź in repo["languages"]["edges"]:
