@@ -10,6 +10,8 @@ srodowiskowej GH_TOKEN albo GITHUB_TOKEN; bez tokena probuje lokalnego `gh`.
 
 from __future__ import annotations
 
+import datetime as dt
+import json
 import pathlib
 import re
 import sys
@@ -793,6 +795,7 @@ def wczytaj_dane() -> dict:
         "jezyki_ile": len(rozmiary),
         "od": f"{założone.month:02d}.{założone.year}",
         "jezyki": główne,
+        "rozmiary": dict(posortowane),
     }
 
 
@@ -801,6 +804,25 @@ def zapisz(nazwa: str, treść: str) -> None:
     plik = WYJŚCIE / nazwa
     plik.write_text(treść, encoding="utf-8")
     print(f"{plik}  {len(treść.encode('utf-8')) / 1024:.1f} KB")
+
+
+def liczby_json(dane: dict) -> None:
+    """Te same liczby co na karcie, do odczytu przez maszyny.
+
+    Strona rowienski-interactive.pl pobiera je przy kazdym wydaniu. Tylko ten
+    automat ma token, ktory widzi prywatne repozytoria - lokalne przeliczenie
+    dostaje od GitHuba jeden worek "wklady prywatne" zamiast commitow, wiec
+    liczby maja jedno zrodlo: ten plik.
+    """
+    wynik = {
+        "odczyt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"),
+        "commity": dane["commity"],
+        "repozytoria": dane["repozytoria"],
+        "jezykiRazem": dane["jezyki_ile"],
+        "kodOd": dane["od"],
+        "rozmiaryJezykow": dane["rozmiary"],
+    }
+    zapisz("statystyki.json", json.dumps(wynik, ensure_ascii=False, indent=2) + "\n")
 
 
 def opis_karty(dane: dict) -> None:
@@ -830,6 +852,7 @@ if __name__ == "__main__":
     if "--statystyki" in sys.argv:
         dane = wczytaj_dane()
         zapisz("statystyki.svg", statystyki(dane))
+        liczby_json(dane)
         opis_karty(dane)
         raise SystemExit(0)
 
