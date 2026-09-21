@@ -1,0 +1,25 @@
+{
+  "odczyt": "2026-09-21",
+  "commity": 355,
+  "repozytoria": 21,
+  "jezykiRazem": 16,
+  "kodOd": "05.2025",
+  "rozmiaryJezykow": {
+    "JavaScript": 3469582,
+    "HTML": 1409241,
+    "C#": 1300169,
+    "Python": 1277009,
+    "TypeScript": 864743,
+    "PLpgSQL": 398276,
+    "Shell": 183964,
+    "PowerShell": 163213,
+    "CSS": 62266,
+    "Inno Setup": 53663,
+    "GDScript": 38043,
+    "Java": 28016,
+    "Batchfile": 7781,
+    "GDShader": 4044,
+    "Dockerfile": 602,
+    "Pascal": 246
+  }
+}
