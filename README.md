@@ -186,7 +186,7 @@ robi dokładnie to samo za ułamek tego.
 
 <img src="assets/naglowek-liczby.svg" alt="Liczby" width="900">
 
-<img src="assets/statystyki.svg" alt="Statystyki: 387 commitów w 12 miesięcy, 22 repozytoriów, rozkład języków" width="900">
+<img src="assets/statystyki.svg" alt="Statystyki: 404 commitów w 12 miesięcy, 22 repozytoriów, rozkład języków" width="900">
 
 <sub>Gotowe karty statystyk pokazałyby tu zero, bo wszystkie repozytoria są prywatne.
 Ta liczy naprawdę - razem z commitami, których nie widać z zewnątrz.</sub>
