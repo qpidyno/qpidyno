@@ -1,25 +1,25 @@
 {
-  "odczyt": "2026-09-25",
-  "commity": 440,
+  "odczyt": "2026-09-26",
+  "commity": 509,
   "repozytoria": 23,
   "jezykiRazem": 16,
   "kodOd": "05.2025",
   "rozmiaryJezykow": {
-    "C#": 3731548,
-    "JavaScript": 3493758,
-    "TypeScript": 1752627,
-    "HTML": 1427653,
-    "Python": 1278039,
-    "PLpgSQL": 423748,
-    "Shell": 204567,
+    "C#": 3799561,
+    "JavaScript": 3516738,
+    "TypeScript": 2255259,
+    "HTML": 1427679,
+    "Python": 1291619,
+    "PLpgSQL": 460875,
+    "Shell": 204601,
     "PowerShell": 174720,
-    "CSS": 66467,
+    "CSS": 83317,
     "Inno Setup": 53663,
     "GDScript": 38217,
     "Java": 28016,
     "Batchfile": 7781,
     "GDShader": 4920,
-    "Dockerfile": 1872,
-    "Pascal": 246
+    "Dockerfile": 1961,
+    "Pascal": 575
   }
 }
