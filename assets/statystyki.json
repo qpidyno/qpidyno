@@ -1,7 +1,7 @@
 {
-  "odczyt": "2026-10-13",
+  "odczyt": "2026-10-14",
   "commity": 1135,
-  "repozytoria": 32,
+  "repozytoria": 33,
   "jezykiRazem": 24,
   "kodOd": "05.2025",
   "rozmiaryJezykow": {
@@ -9,11 +9,11 @@
     "JavaScript": 5224167,
     "TypeScript": 3613148,
     "Python": 2638205,
-    "HTML": 1535448,
+    "HTML": 1539821,
     "Rust": 1301751,
     "PLpgSQL": 614115,
     "Shell": 494543,
-    "Kotlin": 443609,
+    "Kotlin": 483873,
     "QML": 285032,
     "CSS": 261607,
     "PowerShell": 220983,
